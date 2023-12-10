@@ -1,6 +1,5 @@
-import pytest
-
 from survey import AnonymousSurvey
+import pytest
 
 
 # 使用夹具

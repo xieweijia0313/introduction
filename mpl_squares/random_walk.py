@@ -15,10 +15,8 @@ class RandomWalk:
 
     def fill_walk(self):
         """计算随机漫步所包含的各种点"""
-
         # 不断漫步，直到列表达到指定的长度
         while len(self.x_values) < self.num_points:
-
             # 决定前进的方向以及沿这个方向前进的距离
             x_direction = choice([1, -1])
             x_distance = choice([0, 1, 2, 3, 4])
@@ -29,6 +27,7 @@ class RandomWalk:
             y_distance = choice([0, 1, 2, 3, 4])
             y_step = y_direction * y_distance
             self.y_step = y_step
+
             # 拒绝原地踏步
             if self.x_step == 0 and self.y_step == 0:
                 continue
@@ -38,6 +37,7 @@ class RandomWalk:
         # 计算下一个点的x和y值
         next_x = self.x_values[-1] + int(self.x_step)
         next_y = self.y_values[-1] + int(self.y_step)
+
         # 将下一个点加入列表中
         self.x_values.append(next_x)
         self.y_values.append(next_y)

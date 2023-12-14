@@ -26,4 +26,4 @@ fig = px.bar(x=poss_results, y=frequencies, title=title, labels=labels)  # 生�
 # 进一步定制图形
 fig.update_layout(xaxis_dtick=1)  # 刻度标签的间距指定为1
 fig.show()  # 查看网页
-fig.write_html('dice_visual_d6d10.html')  # 保存图像
+# fig.write_html('dice_visual_d6d10.html')  # 保存图像

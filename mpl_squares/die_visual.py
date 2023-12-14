@@ -1,6 +1,7 @@
-import pygal
+import plotly.express as px
 from die import Die
 
+# 创建一个D6
 die = Die()
 
 #  掷几次骰子，并将结果存储在一个列表中
@@ -10,17 +11,16 @@ for foll_num in range(100):
     results.append(result)
 
 # 分析结果
-frequencies = []  # 将分析后的数据依次存入
-for value in range(1, die.num_sides+1):  # 循环骰子的面数+1次
-    frequency = results.count(value)  # 统计列表指定数值出现的次数
+frequencies = []
+poss_results = range(1, die.num_sides+1)
+for value in poss_results:
+    frequency = results.count(value)
     frequencies.append(frequency)
 
 # 对结果进行可视化
-hist = pygal.Bar()  # 创建Bar类的实例
-
-hist.title = "Results of rolling one D6 1000 times."  # 标题
-hist.x_labels = ['1', '2', '3', '4', '5', '6']  # x轴刻度标签
-hist.x_title = "Result"  # x轴标题
-hist.y_title = "Frequency of Result"  # y轴标题
-hist.add('D6', frequencies)  # 数据指定的标签，输入的数据列表
-hist.render_to_file('die_visual.svg')  # 图表渲染为SVG文件
+title = "Results of Rolling One D6 1,000 Times"
+labels = {'x': 'Result', 'y': 'Frequency of Result'}
+fig = px.bar(x=poss_results, y=frequencies, title=title, labels=labels)  # 直方图
+# fig = px.scatter(x=poss_results, y=frequencies)  # 散点图
+# fig = px.line(x=poss_results, y=frequencies)  # 折线图
+fig.show()

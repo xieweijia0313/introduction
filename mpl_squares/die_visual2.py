@@ -34,6 +34,6 @@ fig = px.bar(x=poss_results, y=frequencies, title=title, labels=labels)  # 直�
 # fig = px.line(x=poss_results, y=frequencies)  # 折线图
 
 # 进一步定制图形
-# xaxis_dtick将x轴的标签间距设为1
+# 将x轴的标签间距设为1
 fig.update_layout(xaxis_dtick=1)
 fig.write_html('dice_visual_d6d10.html')

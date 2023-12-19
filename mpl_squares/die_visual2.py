@@ -2,7 +2,7 @@ import plotly.express as px
 from die import Die
 
 # 创建一个D6
-die_1 = Die()
+die_1 = Die(8)
 die_2 = Die(8)
 
 #  掷2个骰子，并将结果存储在一个列表中
@@ -29,11 +29,12 @@ frequencies = [results.count(value) for value in poss_results]
 # 对结果进行可视化
 title = "Results of Rolling Two D6 Dice 50,000 Times"
 labels = {'x': 'Result', 'y': 'Frequency of Result'}
-fig = px.bar(x=poss_results, y=frequencies, title=title, labels=labels)  # 直方图
+# fig = px.bar(x=poss_results, y=frequencies, title=title, labels=labels)  # 直方图
 # fig = px.scatter(x=poss_results, y=frequencies)  # 散点图
-# fig = px.line(x=poss_results, y=frequencies)  # 折线图
+fig = px.line(x=poss_results, y=frequencies)  # 折线图
 
 # 进一步定制图形
 # 将x轴的标签间距设为1
 fig.update_layout(xaxis_dtick=1)
-fig.write_html('dice_visual_d6d10.html')
+# fig.write_html('dice_visual_d6d10.html')
+fig.show()

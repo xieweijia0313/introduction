@@ -37,7 +37,7 @@ ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
 ax.set_title("Daily High Temperatures, July 2021", fontsize=24)
 ax.set_xlabel('', fontsize=16)
 
-# 绘制倾斜的日期标签
+# 绘制倾斜的x轴标签
 fig.autofmt_xdate()
 
 ax.set_ylabel("Temperature (F)", fontsize=16)

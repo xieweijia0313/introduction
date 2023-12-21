@@ -38,15 +38,11 @@ for lev in levels:
         with file_path.open('a') as file_obj:
             file_obj.write(set_resistance + "\n")
     else:
-        # print(lev)
-        # print(f"{lev:02X}")
         lev_16 = f"{lev:02X}"
         high_2 = '0' + lev_16[:1]
         low_2 = lev_16[1:]
-        # print(low_2, high_2)
         data_1[3] = int(low_2, 16)  # 16进制转成十进制
         data_1[4] = int(high_2, 16)
-        # print(data_1)
 
         # # 异或校验，生成checksum
         checksum = bcc_checksum(data_1)

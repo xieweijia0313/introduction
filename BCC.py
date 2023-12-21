@@ -11,6 +11,6 @@ def bcc_checksum(data):
 
 
 file_path = Path("set_resistance.txt")
-data_1 = [0x06, 0x02, 0x09, 0x0A, 0x00]  # 十六进制
-checksum = bcc_checksum(data_1)
-print(f"BCC checksum: 0x{checksum:02X}")  # 十进制转成十六进制
+data1 = [0x06, 0x02, 0x09, 0x0A, 0x00]  # 十六进制
+checksum = bcc_checksum(data1)
+print(f"BCC checksum: 0x{checksum:02X}")

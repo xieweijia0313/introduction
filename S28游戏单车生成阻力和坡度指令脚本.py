@@ -33,7 +33,7 @@ for lev in levels:
         for i in data_1:
             data_2 += f'{i:02X}'
         # 将校验码组成完整的指令
-        set_resistance = f'{int(lev/10)} AA{data_2}{checksum:02X}55'
+        set_resistance = f'{int(lev/10)} [AA{data_2}{checksum:02X}55]'
         # 以追加模式打开
         with file_path.open('a') as file_obj:
             file_obj.write(set_resistance + "\n")
@@ -55,7 +55,7 @@ for lev in levels:
             data_2 += f'{i:02X}'
 
         # 将校验码组成完整的指令
-        set_resistance = f'{int(lev/10)} AA{data_2}{checksum:02X}55'
+        set_resistance = f'{int(lev/10)} [AA{data_2}{checksum:02X}55]'
         # 以追加模式打开
-        with file_path.open('a') as file_obj:
+        with file_path.open('a',encoding="utf-8") as file_obj:
             file_obj.write(set_resistance + "\n")

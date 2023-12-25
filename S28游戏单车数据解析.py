@@ -1,24 +1,28 @@
 from pathlib import Path
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
+import plotly.express as px
 
 file_path = Path("S28_data.txt")
 path = Path("S28.txt")
+path.write_text("")
 # 打开文件，逐行读取，组成一个列表
 content = file_path.read_text().rstrip().splitlines()
 
+rpm_lists = []
+time_lists = []
 data_bike_lists = []
 for cont in content:
 
-    find_idx = cont.find("AA")
+    find_idx = cont.find("AA-27")
     # print(find_idx)
     if find_idx == 90:
         data_bike = cont[90:].split('-')
         data_bike_lists.append(data_bike)
+        time_lists.append(cont[2:10])
 
-rpm_lists = []
-time_lists = []
-
+# print(data_bike_lists)
 for contents in data_bike_lists:
+    print(contents)
     # 每一个字节位，代表的数据
     date_dicts = {
         "设备状态0x01": [4], "设备模式0x02": [5, 6], "瞬时速度0x03": 7, "瞬时踏频0x06": 10, "平均踏频0x0C": 13,
@@ -37,7 +41,7 @@ for contents in data_bike_lists:
     date_0x08 = f"{int(contents[26] + contents[25], 16)}"
     date_0x0E = int(contents[29] + contents[28], 16)
     date_0x12 = f"{int(contents[32] + contents[31], 16)}"
-    date_0x18 = int(contents[35] + contents[34], 16)
+    date_0x18 = contents[35] + contents[34]
     date_0x1E = f"{int(contents[38] + contents[37], 16)}"
     date_dict_keys = list(date_dicts.keys())
 
@@ -48,14 +52,25 @@ for contents in data_bike_lists:
         print(date_dict_key, date[i])
         d = f"{date_dict_key, date[i]}"
         i += 1
+
         with path.open('a') as file_obj:
-            file_obj.write(f"{d}\n")
+            file_obj.write(d)
     with path.open('a') as file_obj:
         file_obj.write(f"\n")
     print()
     rpm_lists.append(int(float(date_0x06)))
-    time_lists.append(int(float(date_0x1E)))
 
-fig, ax = plt.subplots()
-ax.plot(rpm_lists, linewidth=5)
-plt.show()
+
+# fig, ax = plt.subplots()
+# ax.plot(time_lists, rpm_lists, linewidth=5)
+# ax.set_title("", fontsize=12)
+# ax.set_xlabel("Time", fontsize=12)
+# ax.set_ylabel("RPM", fontsize=12)
+# plt.show()
+# time.sleep(1)
+
+title = "踏频"
+labels = {'x': 'Time', 'y': 'RPM'}
+fig1 = px.line(x=time_lists, y=rpm_lists, title=title, labels=labels)
+fig1.write_html('S28.html')
+fig1.show()

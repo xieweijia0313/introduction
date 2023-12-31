@@ -11,7 +11,7 @@ def bcc_checksum(data):
 
 
 # 指令范围0~num
-num = 45
+num = 25
 # 存放指令的文件
 file_path = Path("cmd_settings.txt")
 # 清空文件内容
@@ -23,12 +23,12 @@ check_data = [0x02, 0x53, 0x02, 0x00, 0x00, 0xFF, 0x03]
 for lev in range(0, num):
     cmd_data = ""
     if lev >= 0:
-        check_data[3] = 0x1E
-        check_data[4] = lev
+        check_data[3] = lev * 10
+        # check_data[4] = lev
         # 异或校验，生成checksum
         checksum = bcc_checksum(check_data[1:-2])
         # 打印校验码
-        print(f"{lev} BCC checksum: 0x{checksum:02X}")
+        # print(f"{lev} BCC checksum: 0x{checksum:02X}")
         # 将校验码放到数据列表中
         check_data[-2] = checksum
 

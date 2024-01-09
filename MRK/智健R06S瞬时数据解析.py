@@ -15,8 +15,8 @@ for cont in content:
 
     find_idx = cont.find("02-42")
     print(find_idx)
-    if find_idx == 90:
-        data_bike = cont[90:].split('-')
+    if find_idx == 92:
+        data_bike = cont[92:].split('-')
         data_bike_lists.append(data_bike)
         time_lists.append(cont[2:10])
 # print(data_bike_lists)
@@ -48,8 +48,8 @@ for contents in data_bike_lists:
     print()
     rpm_lists.append(int(float(date_0x03)))
 
-# title = "踏频"
-# labels = {'x': 'Time', 'y': 'RPM'}
-# fig1 = px.line(x=time_lists, y=rpm_lists, title=title, labels=labels)
-# fig1.write_html('S28.html')
-# fig1.show()
+title = "踏频"
+labels = {'x': 'Time', 'y': 'RPM'}
+fig1 = px.line(x=time_lists, y=rpm_lists, title=title, labels=labels)
+fig1.write_html('S28.html')
+fig1.show()

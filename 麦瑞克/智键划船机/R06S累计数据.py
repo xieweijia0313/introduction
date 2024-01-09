@@ -57,7 +57,6 @@ for contents in data_bike_lists:
 title = "时间"
 labels = {'x': 'Time', 'y': '时间'}
 fig1 = px.line(x=time_lists, y=time, title=title, labels=labels)
-fig1.write_html('S28.html')
 fig1.show()
 
 title = "距离"

@@ -1,12 +1,13 @@
 from pathlib import Path
 import plotly.express as px
 
+
 class DataConversion:
     """解析数据的类"""
 
     def __init__(self, file_path):
         self.file_path = file_path
-        self.anal_path = '解析的文件.txt'
+        self.anal_path = '解码数据.txt'
         self.I_data, self.I_UTC_8 = [], []  # I_data瞬时数据，I_UTC_8系统时间
         self.CUM_data, self.CUM_UTC_8 = [], []  # CUM_data累计数据， CUM_UTC_8系统时间
         # 瞬时数据
@@ -62,12 +63,12 @@ class DataConversion:
         # print(self.resistance_levels)  # 打印瞬时速度
         print(self.step_per_minutes)  # 打印瞬时踏频
 
-        date_dicts = {
-            "运行时间elapsed_time": [3, 4],
-            "距离total_distance": [5, 6],
-            "卡路里total_energy": [7, 8],
-            "计数stride_count": [9, 10]
-        }
+        # date_dicts = {
+        #     "运行时间elapsed_time": [3, 4],
+        #     "距离total_distance": [5, 6],
+        #     "卡路里total_energy": [7, 8],
+        #     "计数stride_count": [9, 10]
+        # }
         for cum in self.CUM_data:
             cum = cum.split('-')
             # print(cum)  # 打印原始累计数据

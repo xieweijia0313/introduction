@@ -1,6 +1,5 @@
 from pathlib import Path
 import plotly.express as px
-import matplotlib.pyplot as plt
 
 
 class DataConversion:
@@ -31,9 +30,7 @@ class DataConversion:
         """主程序"""
         self._up_data_16()
         self._anal_data_10()
-        # self.data_visualisation_entity()
-        self.data_visualisation_entity_2()
-
+        self.data_visualisation_entity()
 
     def _up_data_16(self):
         """提取原始数据"""
@@ -94,29 +91,12 @@ class DataConversion:
                     file_obj.write(f'运动时间:{elapsed_time}, 距离:{total_distance},卡路里:{total_energy}, 计数:{stride_count}\n')
                 print(f'运行时间:{elapsed_time}, 距离:{total_distance},卡路里:{total_energy}, 计数:{stride_count}')
 
-    def _anal_data_write_file(self):
-        pass
-
     def data_visualisation_entity(self):
         """数据可视化"""
         title = ''
         labels = {'x': 'Time', 'y': ''}
         fig1 = px.line(x=self.I_UTC_8, y=self.step_per_minutes, title=title, labels=labels)
         fig1.show()
-
-    def data_visualisation_entity_2(self):
-        plt.style.use('seaborn')
-        fig, ax = plt.subplots()
-        ax.plot(self.I_UTC_8, self.step_per_minutes, linewidth=5)
-        # ax.scatter(self.I_UTC_8, self.step_per_minutes, s=10)
-
-        # 设置图题并给坐标轴加上标签
-        ax.set_title("", fontsize=24)
-        ax.set_xlabel("", fontsize=14)
-        ax.set_ylabel("", fontsize=14)
-        # 设置刻度标记的样式
-        # ax.tick_params(labelsize=14)
-        plt.show()
 
 
 if __name__ == "__main__":
@@ -125,4 +105,3 @@ if __name__ == "__main__":
     file_name = '解码_' + path
     data = DataConversion(path, file_name)
     data.run_data()
-

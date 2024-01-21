@@ -1,0 +1,14 @@
+Index: test.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># coding=utf-8\r\nprint('test7')\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test.py b/test.py
+--- a/test.py	(revision 69654d20b846567c9f74bf5005a9da40a8adfbd0)
++++ b/test.py	(date 1705840288164)
+@@ -1,2 +1,2 @@
+ # coding=utf-8
+-print('test7')
++print('test9')

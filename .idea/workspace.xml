@@ -170,6 +170,7 @@
       <workItem from="1705839468026" duration="31000" />
       <workItem from="1705839539267" duration="682000" />
       <workItem from="1705840238919" duration="189000" />
+      <workItem from="1705840478371" duration="459000" />
     </task>
     <task id="LOCAL-00001" summary="home01">
       <created>1705839069306</created>
@@ -213,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705840265081</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="home">
+      <created>1705840706275</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1705840706276</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,5 +263,7 @@
     <SUITE FILE_PATH="coverage/introduction$mpl_squares.coverage" NAME="mpl_squares折线图 覆盖结果" MODIFIED="1705839205349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/数据可视化项目" />
     <SUITE FILE_PATH="coverage/introduction$rw_visual.coverage" NAME="rw_visual随机漫步图 覆盖结果" MODIFIED="1705839195746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/数据可视化项目" />
     <SUITE FILE_PATH="coverage/introduction$test.coverage" NAME="test 覆盖结果" MODIFIED="1705840245373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/introduction$json.coverage" NAME="json序列化 覆盖结果" MODIFIED="1705840660463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/old" />
+    <SUITE FILE_PATH="coverage/introduction$.coverage" NAME="日期和时间 覆盖结果" MODIFIED="1705840644935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/old" />
   </component>
 </project>

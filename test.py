@@ -1,2 +1,2 @@
 # coding=utf-8
-print('test6')
+print('test7')
